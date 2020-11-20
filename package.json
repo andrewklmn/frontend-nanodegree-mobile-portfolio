@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "html-minifier --collapse-whitespace --remove-comments -o views/pizza.html views/pizza.source.html && css-minify -d views/css -o views/css"
+    "build": "html-minifier --collapse-whitespace --remove-comments -o views/pizza.html views/pizza.source.html && rm -rf views/css/*.min.css && css-minify -d views/css -o views/css && uglifyjs views/js/main.source.js --compress --mangle --output views/js/main.js"
   },
   "repository": {
     "type": "git",
